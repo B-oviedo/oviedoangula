@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import { Logger } from '../../services/logger';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './home.css'
 })
 export class Home {
+
+  private log: Logger = Inject(Logger);
+
+  ngOnInit() {
+    // @ts-ignore
+    this.log('info','Home cargado');
+  }
 
 }
